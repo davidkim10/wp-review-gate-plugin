@@ -1,6 +1,6 @@
 # WordPress Review Gate Plugin
 
-Packaged the <a href=https://github.com/davidkim10/jquery-review-gate>jQuery library</a> I created and turned it into a WordPress plugin :)
+Packaged the [jQuery library](https://github.com/davidkim10/jquery-review-gate) I created and turned it into a WordPress plugin :)
 
 ## Plugin Description
 
