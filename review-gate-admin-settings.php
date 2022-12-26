@@ -35,16 +35,15 @@ function review_gate_settings_page_init() {
         do_settings_sections( 'review-gate-settings-group' );
       ?>
       <style>
-        .dk-review-table input[type="text"] {
-          width: 100%;
-        }
+        .rg-table input[type="text"] { width: 100%;}
       </style>
-      <table class="form-table dk-review-table">
+      <table class="form-table rg-table">
         <tr valign="top">
           <th scope="row">Review Platform Name</th>
           <td>
             <input
               type="text"
+              placeholder="Yelp, Google, etc"
               name="review_gate_platform"
               value="<?php echo esc_html( get_option( 'review_gate_platform' ) ); ?>"
             />
@@ -56,6 +55,7 @@ function review_gate_settings_page_init() {
             <input
               type="text"
               name="review_gate_link"
+              placeholder="https://yelp.com/yourBusinessId"
               value="<?php echo esc_url( get_option( 'review_gate_link' ) ); ?>"
             />
           </td>
@@ -76,6 +76,7 @@ function review_gate_settings_page_init() {
             <input
               type="text"
               name="review_gate_shortcode"
+              placeholder='[contact-form-7 id="2707" title="Feedback Form"]'
               value="<?php echo esc_html( get_option( 'review_gate_shortcode' ) ); ?>"
             />
           </td>
@@ -83,7 +84,7 @@ function review_gate_settings_page_init() {
       </table>
 
       <div style="margin-bottom: 20px;">
-        <h2>Use shortcode:</h2>
+        <h2>Use the following shortcode to generate a review gate:</h2>
         <code>
           [dk_review_gate]
         </code>

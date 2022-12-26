@@ -14,8 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require "review-gate-script-loader.php";
-require "review-gate-admin.php";
-
+require "review-gate-admin-settings.php";
 
 function review_gate_shortcode( $atts ) {
   // Extract shortcode attributes from WP plugin settings
@@ -34,19 +33,13 @@ function review_gate_shortcode( $atts ) {
   $form_shortcode = do_shortcode( $shortcode );
 
   $template = <<<HTML
-  <div>
-    <nav class="review-gate-navbar" style="display: none">
-      <button class="review-gate-navbar__btn">&#10094;</button>
-      <div class="review-gate-navbar__logo-wrapper">
-        <img
-          class="review-gate-navbar__logo"
-          src="$logo"
-          alt="logo"
-        />
-      </div>
-    </nav>
-
-    <main>
+    <div class="dk-review-gate-wrapper">
+      <nav class="review-gate-navbar" style="display: none">
+        <button class="review-gate-navbar__btn">&#10094;</button>
+        <div class="review-gate-navbar__logo-wrapper">
+          <img class="review-gate-navbar__logo" src="$logo" alt="logo" />
+        </div>
+      </nav>
       <div id="review-gate">
         <section class="review-step">
           <h2 class="review-title">Rate Your Recent Experience</h2>
@@ -54,9 +47,11 @@ function review_gate_shortcode( $atts ) {
         <section class="review-step">
           <h2 class="review-title">Please Leave Us A Review!</h2>
           <p>
-            We are very happy to hear you had a positive experience with $company. Please take a second to leave us a review on $platform.
+            We are very happy to hear you had a positive experience with $company. Please take a second to leave us
+            a review on $platform.
           </p>
-          <a class="btn btn-color-primary btn-style-default btn-size-default leave-review-btn" href="$link">Leave Review</a>
+          <a class="btn btn-color-primary btn-style-default btn-size-default leave-review-btn" href="$link">Leave
+            Review</a>
         </section>
         <section class="review-step">
           <h2 class="review-title">Please Leave Us Some Feedback</h2>
@@ -69,8 +64,7 @@ function review_gate_shortcode( $atts ) {
           </p>
         </section>
       </div>
-    </main>
-  </div>
+    </div>
   HTML;
 
   return $template;

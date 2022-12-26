@@ -19,7 +19,7 @@
       },
     };
 
-    // -- Configs
+    // Configs
     var settings = $.extend(true, {}, defaults, options);
     var emojiConfig = Object.create(settings.emojiConfig);
     emojiConfig.onUpdate = settings.onUpdate;
@@ -29,7 +29,7 @@
     var $navbar = $('.' + settings.navBarClassName);
     var $navBarBackBtn = $('.' + settings.navBarBackBtnClassName);
 
-    // -- Utility Functions
+    // Utility Functions
     var findCurrentStep = function () {
       return $selector.find('.current').attr('data-step');
     };
@@ -60,7 +60,7 @@
       });
     };
 
-    // -- Initialize Functions
+    // Initialize Functions
 
     var initNavBar = function () {
       $navbar.fadeIn();
