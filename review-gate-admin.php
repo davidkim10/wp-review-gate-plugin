@@ -21,10 +21,7 @@ function review_gate_register_settings_page() {
     register_setting( 'review-gate-settings-group', $setting );
   }
 }
-
-
 add_action( 'admin_menu', 'review_gate_register_settings_page' );
-
 
 function review_gate_settings_page_init() {
   ?>
