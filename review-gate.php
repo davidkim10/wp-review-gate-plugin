@@ -6,7 +6,11 @@ Version: 1.0
 Author: David K
 Author URI: https://davekim.io
 Text Domain: wp-review-gate-plugin
-* Requires PHP: 7.3
+
+License: MIT
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Requires PHP: 7.0
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
