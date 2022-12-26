@@ -61,7 +61,7 @@ function review_gate_settings_page_init() {
           </td>
         </tr>
         <tr valign="top">
-          <th scope="row">Logo</th>
+          <th scope="row">Logo URL</th>
           <td>
             <input
               type="text"
@@ -71,7 +71,7 @@ function review_gate_settings_page_init() {
           </td>
         </tr>
         <tr valign="top">
-          <th scope="row">Form Shortcode</th>
+          <th scope="row">Form Shortcode (to capture reviews that are less than 5 star)</th>
           <td>
             <input
               type="text"

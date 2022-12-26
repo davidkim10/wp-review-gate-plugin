@@ -2,8 +2,8 @@
 /*
 Plugin Name: DK Review Gate
 Description: Business review gate. Help capture more 5 star leads!
-Version: 1.0
-Author: David K
+Version: 1.0.1
+Author: David Kim
 Author URI: https://davekim.io
 Text Domain: wp-review-gate-plugin
 
