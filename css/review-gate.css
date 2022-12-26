@@ -6,8 +6,8 @@
   opacity: 0.9;
 }
 
-.leave-review-btn {
-  margin-top: 1rem;
+.dk-review-gate-wrapper {
+  min-height: 100vh;
 }
 
 .review-gate-navbar {
@@ -38,6 +38,7 @@
   top: 50%;
   transform: translateY(-50%);
   width: 28px;
+  padding: 0;
 }
 
 .review-gate-navbar__btn:hover {
@@ -47,11 +48,12 @@
 }
 
 #review-gate {
-  min-height: 90vh;
-  position: relative;
   text-align: center;
 }
 
+.leave-review-btn {
+  margin-top: 1rem;
+}
 #emoji-ratings-wrapper {
   color: transparent;
   text-shadow: 0 0 0 gold;

@@ -30,17 +30,27 @@
     var $navBarBackBtn = $('.' + settings.navBarBackBtnClassName);
 
     // Utility Functions
-    var findCurrentStep = function () {
+    function findCurrentStep() {
       return $selector.find('.current').attr('data-step');
     };
 
-    var updateCurrentStep = function (step) {
+    function calcCurrentStepHeight() {
+      return $selector.find('.current').outerHeight();
+    }
+
+    function setReviewGateMinHeight(heightBuffer = 50) {
+      // will set review gate height to current step height
+      var minHeight = calcCurrentStepHeight() + heightBuffer;
+      $selector.css("min-height", minHeight )
+    }
+
+    function updateCurrentStep (step) {
       var currentStep = step || findCurrentStep();
       window.reviewGateSettings.currentStep = currentStep;
       $('body').attr('data-current-step', currentStep);
     };
 
-    var handleNavBackBtnDisplay = function () {
+    function handleNavBackBtnDisplay() {
       var step = window.reviewGateSettings.currentStep;
       if (step > 1) {
         $navBarBackBtn.removeClass('hide');
@@ -49,20 +59,21 @@
       }
     };
 
-    var handleOnStepChange = function (step, callback) {
+    function handleOnStepChange (step, callback) {
       $('.review-step.current').fadeOut(function () {
         $('.review-step.current').removeClass('current');
         var target = $($selector).find("[data-step='".concat(step, "']"));
         target.fadeIn(400);
         target.addClass('current');
         updateCurrentStep(step);
+        setReviewGateMinHeight();
         callback();
       });
     };
 
     // Initialize Functions
 
-    var initNavBar = function () {
+    function initNavBar() {
       $navbar.fadeIn();
       $navbar.css('background-color', settings.navbarColor);
       $navBarBackBtn.addClass('hide');
@@ -74,7 +85,7 @@
       }
     };
 
-    var initSteps = function () {
+    function initSteps() {
       var $step = $('.' + settings.stepClassName);
       !$step.hasClass('current') && $step.first().addClass('current');
       $step.each(function (index) {
@@ -82,7 +93,7 @@
       });
     };
 
-    var initEmojiRating = function () {
+    function initEmojiRating() {
       var emojiWrapper = $('<div />')
         .attr(settings.emojiConfig.attributes)
         .css(settings.emojiConfig.css)
@@ -109,6 +120,7 @@
         initSteps();
         initEmojiRating();
         updateCurrentStep();
+        setReviewGateMinHeight();
       },
       step: function (step) {
         handleOnStepChange(step, function () {
