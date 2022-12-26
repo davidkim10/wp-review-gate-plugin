@@ -8,7 +8,7 @@ Author URI: https://davekim.io
 Text Domain: wp-review-gate-plugin
 
 License: MIT
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://opensource.org/licenses/MIT
 
 Requires PHP: 7.0
 */
