@@ -2,11 +2,12 @@
 
 Packaged the [jQuery library](https://github.com/davidkim10/jquery-review-gate) I created and turned it into a WordPress plugin :)
 
-## Plugin Description
+## WordPress Plugin Settings
+Description: Review gate made with jQuery to capture user reviews that are not 5-star quality. This helps businesses collect both negative and positive feedback to better enhance their customer service experience.
 
-Review gate made with jQuery to capture user reviews that are not 5-star quality. This helps businesses collect both negative and positive feedback to better enhance their customer service experience.
+Find the plugin settings in the admin dashboard of WordPress under "Settings > DK Review Gate"
 
-The screenshot(s) below use a fake/pseudo company to illustrate the review gate.
+![screenshot](./img/screenshot-01.png)
 
 ## Quick Start
 
@@ -106,12 +107,6 @@ var defaults = {
 | enableNavBackBtn       | Boolean  |
 | emojiConfig            | Object   |
 | onUpdate               | Function |
-
-## WordPress Plugin Settings
-
-Find the plugin settings in the admin dashboard of WordPress under "Settings > DK Review Gate"
-
-![screenshot](./img/screenshot-01.png)
 
 ## Installation Methods
 
