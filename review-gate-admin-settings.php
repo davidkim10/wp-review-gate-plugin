@@ -8,15 +8,17 @@ function review_gate_register_settings_page() {
     'review_gate_settings_page_init'
   );
 
+  // Add the new field 'review_gate_page_id' to your settings array.
   $settings = array(
     'review_gate_link',
     'review_gate_platform',
     'review_gate_logo',
     'review_gate_company',
-    'review_gate_shortcode'
+    'review_gate_shortcode',
+    'review_gate_page_id'
   );
 
-  // Register settings
+  // Register each setting.
   foreach ($settings as $setting) {
     register_setting('review-gate-settings-group', $setting);
   }
@@ -70,7 +72,7 @@ function review_gate_settings_page_init() {
           </td>
         </tr>
         <tr valign="top">
-          <th scope="row">Form Shortcode (to capture reviews that are less than 5 star)</th>
+          <th scope="row">Form Shortcode (for capturing reviews that are less than 5 stars)</th>
           <td>
             <input
               type="text"
@@ -79,13 +81,22 @@ function review_gate_settings_page_init() {
               value="<?php echo esc_html(get_option('review_gate_shortcode')); ?>" />
           </td>
         </tr>
+        <tr valign="top">
+          <th scope="row">Page/Post ID for Asset Loading (optional)</th>
+          <td>
+            <input
+              type="text"
+              name="review_gate_page_id"
+              placeholder="Enter Page or Post ID (e.g., 42)"
+              value="<?php echo esc_attr(get_option('review_gate_page_id')); ?>" />
+            <p class="description">If set, the CSS/JS assets will only load on the specified page or post.</p>
+          </td>
+        </tr>
       </table>
 
       <div style="margin-bottom: 20px;">
         <h2>Use the following shortcode to generate a review gate:</h2>
-        <code>
-          [dk_review_gate]
-        </code>
+        <code>[dk_review_gate]</code>
       </div>
 
       <?php submit_button(); ?>

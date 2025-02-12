@@ -33,31 +33,22 @@ function rg_asset_loader($type, $handle, $cdn_url, $local_file, $deps = array(),
 /**
  * rg_should_load_assets()
  *
- * Determines if the assets should be loaded.
- *
- * You can modify this function based on your needs.
- * Below are two options:
- *
- * Option 1: Only load on pages using a specific page template.
- * Option 2: Only load on pages where the [dk_review_gate] shortcode is present.
- *
- * In this example, if either condition is true, the assets are loaded.
- *
+ * Determines if the assets should be loaded if user provided a page ID.
  * @return bool True if assets should be loaded; otherwise, false.
  */
 function rg_should_load_assets() {
-  // Option 1: Check for a specific page template.
-  // if (is_page_template('template-html.php')) {
-  //   return true;
-  // }
+  // Get the saved page/post ID (if any)
+  $allowed_id = get_option('review_gate_page_id');
 
-  // Option 2: Check if the current singular post/page contains the shortcode.
-  if (is_singular() && isset($GLOBALS['post']) && has_shortcode($GLOBALS['post']->post_content, 'dk_review_gate')) {
-    return true;
+  // If an ID is provided, check if it matches the current queried object's ID.
+  if (! empty($allowed_id)) {
+    $current_id = get_queried_object_id();
+    return absint($current_id) === absint($allowed_id);
   }
 
-  return false;
+  return true;
 }
+
 
 function rg_load_styles() {
   // Only enqueue styles if the conditions are met.

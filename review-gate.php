@@ -41,7 +41,9 @@ function review_gate_shortcode($atts) {
       <nav class="review-gate-navbar" style="display: none">
         <button class="review-gate-navbar__btn">&#10094;</button>
         <div class="review-gate-navbar__logo-wrapper">
-          <img class="review-gate-navbar__logo" src="$logo" alt="logo" />
+          <a href="/" title="Back to Home">
+            <img class="review-gate-navbar__logo" src="$logo" alt="logo" />
+          </a>
         </div>
       </nav>
       <div id="review-gate">
