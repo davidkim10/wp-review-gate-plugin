@@ -6,8 +6,8 @@ function review_gate_register_settings_page() {
     'manage_options', // Capability
     'dk-review-gate', // Menu slug
     'review_gate_settings_page_init'
-  ); 
-  
+  );
+
   $settings = array(
     'review_gate_link',
     'review_gate_platform',
@@ -17,25 +17,27 @@ function review_gate_register_settings_page() {
   );
 
   // Register settings
-  foreach($settings as $setting) {
-    register_setting( 'review-gate-settings-group', $setting );
+  foreach ($settings as $setting) {
+    register_setting('review-gate-settings-group', $setting);
   }
 }
-add_action( 'admin_menu', 'review_gate_register_settings_page' );
+add_action('admin_menu', 'review_gate_register_settings_page');
 
 function review_gate_settings_page_init() {
-  ?>
+?>
   <div class="wrap">
     <h1>Review Gate Settings</h1>
     <p>By: <a href="https://davekim.io" target="_blank">David K</a></p>
 
     <form method="post" action="options.php">
       <?php
-        settings_fields( 'review-gate-settings-group' );
-        do_settings_sections( 'review-gate-settings-group' );
+      settings_fields('review-gate-settings-group');
+      do_settings_sections('review-gate-settings-group');
       ?>
       <style>
-        .rg-table input[type="text"] { width: 100%;}
+        .rg-table input[type="text"] {
+          width: 100%;
+        }
       </style>
       <table class="form-table rg-table">
         <tr valign="top">
@@ -45,8 +47,7 @@ function review_gate_settings_page_init() {
               type="text"
               placeholder="Yelp, Google, etc"
               name="review_gate_platform"
-              value="<?php echo esc_html( get_option( 'review_gate_platform' ) ); ?>"
-            />
+              value="<?php echo esc_html(get_option('review_gate_platform')); ?>" />
           </td>
         </tr>
         <tr valign="top">
@@ -56,8 +57,7 @@ function review_gate_settings_page_init() {
               type="text"
               name="review_gate_link"
               placeholder="https://yelp.com/yourBusinessId"
-              value="<?php echo esc_url( get_option( 'review_gate_link' ) ); ?>"
-            />
+              value="<?php echo esc_url(get_option('review_gate_link')); ?>" />
           </td>
         </tr>
         <tr valign="top">
@@ -66,8 +66,7 @@ function review_gate_settings_page_init() {
             <input
               type="text"
               name="review_gate_logo"
-              value="<?php echo esc_url( get_option( 'review_gate_logo' ) ); ?>"
-            />
+              value="<?php echo esc_url(get_option('review_gate_logo')); ?>" />
           </td>
         </tr>
         <tr valign="top">
@@ -77,8 +76,7 @@ function review_gate_settings_page_init() {
               type="text"
               name="review_gate_shortcode"
               placeholder='[contact-form-7 id="2707" title="Feedback Form"]'
-              value="<?php echo esc_html( get_option( 'review_gate_shortcode' ) ); ?>"
-            />
+              value="<?php echo esc_html(get_option('review_gate_shortcode')); ?>" />
           </td>
         </tr>
       </table>
@@ -93,5 +91,5 @@ function review_gate_settings_page_init() {
       <?php submit_button(); ?>
     </form>
   </div>
-  <?php
+<?php
 }

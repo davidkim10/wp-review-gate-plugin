@@ -2,7 +2,7 @@
 /*
 Plugin Name: DK Review Gate
 Description: Business review gate. Help capture more 5 star leads!
-Version: 1.0.1
+Version: 1.0.3
 Author: David Kim
 Author URI: https://davekim.io
 Text Domain: wp-review-gate-plugin
@@ -13,28 +13,28 @@ License URI: https://opensource.org/licenses/MIT
 Requires PHP: 7.0
 */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (! defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
 }
 
 require "review-gate-script-loader.php";
 require "review-gate-admin-settings.php";
 
-function review_gate_shortcode( $atts ) {
+function review_gate_shortcode($atts) {
   // Extract shortcode attributes from WP plugin settings
-  extract( shortcode_atts( array(
-    'link' => get_option( 'review_gate_link' ),
-    'platform' => get_option( 'review_gate_platform' ),
-    'logo' => get_option( 'review_gate_logo' ),
-    'company' => get_option( 'review_gate_company' ),
-    'shortcode' => get_option( 'review_gate_shortcode' ),
-  ), $atts ) );
+  extract(shortcode_atts(array(
+    'link' => get_option('review_gate_link'),
+    'platform' => get_option('review_gate_platform'),
+    'logo' => get_option('review_gate_logo'),
+    'company' => get_option('review_gate_company'),
+    'shortcode' => get_option('review_gate_shortcode'),
+  ), $atts));
 
-    // Sanitize user input
-  $link = esc_url( $link );
+  // Sanitize user input
+  $link = esc_url($link);
 
   // Render shortcode
-  $form_shortcode = do_shortcode( $shortcode );
+  $form_shortcode = do_shortcode($shortcode);
 
   $template = <<<HTML
     <div class="dk-review-gate-wrapper">
@@ -75,4 +75,4 @@ function review_gate_shortcode( $atts ) {
 }
 
 
-add_shortcode( 'dk_review_gate', 'review_gate_shortcode' );
+add_shortcode('dk_review_gate', 'review_gate_shortcode');
