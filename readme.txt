@@ -30,6 +30,10 @@ Yes. You can override the default CSS styles by adding your own custom styles or
 3. **Emoji Rating Feature:** The emoji-based rating system in action.
 
 == Changelog ==
+= 1.0.4 = 
+Remove generic CSS class conflicts
+Update CDN dependency
+
 = 1.0.3 = 
 * Add bundler for improved performance
 * Asset loading optimizations for improved core vitals

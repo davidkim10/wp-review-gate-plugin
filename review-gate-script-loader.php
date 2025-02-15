@@ -59,7 +59,7 @@ function rg_load_styles() {
   rg_asset_loader(
     'css',
     'dk-review-gate-css',
-    'https://cdn.jsdelivr.net/npm/jquery-review-gate@1.0.3/dist/css/review-gate.min.css',
+    'https://cdn.jsdelivr.net/npm/jquery-review-gate@1.0.4/dist/css/review-gate.min.css',
     plugins_url('/css/review-gate.min.css', __FILE__),
     array(),
     '1.0.3',
@@ -81,10 +81,10 @@ function rg_load_js() {
   rg_asset_loader(
     'js',
     'dk-review-gate-js',
-    'https://cdn.jsdelivr.net/npm/jquery-review-gate@1.0.3/dist/js/review-gate.jquery.min.js',
+    'https://cdn.jsdelivr.net/npm/jquery-review-gate@1.0.4/dist/js/review-gate.jquery.min.js',
     plugins_url('/js/review-gate.jquery.min.js', __FILE__),
     array('jquery'),
-    '1.0.3',
+    '1.0.4',
     true
   );
 }
