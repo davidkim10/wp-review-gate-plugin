@@ -62,7 +62,7 @@ function rg_load_styles() {
     'https://cdn.jsdelivr.net/npm/jquery-review-gate@1.0.4/dist/css/review-gate.min.css',
     plugins_url('/css/review-gate.min.css', __FILE__),
     array(),
-    '1.0.3',
+    '1.0.4',
     'all'
   );
 }
